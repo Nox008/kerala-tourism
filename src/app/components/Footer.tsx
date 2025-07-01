@@ -25,11 +25,11 @@ const Footer = () => {
           >
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">K</span>
+                <span className="text-white font-bold text-xl">𖦹</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Kerala Journey</h3>
-                <p className="text-emerald-200 text-sm">God's Own Country</p>
+                <h3 className="text-2xl font-bold">TropiKerala</h3>
+                <p className="text-emerald-200 text-sm">Tropical. Tranquil. Timeless.</p>
               </div>
             </div>
             <p className="text-emerald-100 leading-relaxed">
@@ -142,7 +142,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <p className="text-emerald-100">info@keralajourney.com</p>
+                <p className="text-emerald-100">info@TropiKerala.com</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
@@ -194,7 +194,7 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-emerald-700 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
           <p className="text-emerald-200 text-center md:text-left">
-            © 2024 Kerala Journey. All rights reserved. Made with ❤️ for Kerala Tourism.
+            © 2025 TropiKerala. All rights reserved. Made with ❤️ for Kerala Tourism.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy">

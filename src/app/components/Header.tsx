@@ -29,7 +29,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>info@keralajourney.com</span>
+              <span>info@TropiKerala.com</span>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-2">
@@ -55,11 +55,11 @@ const Header = () => {
                 className="flex items-center space-x-3"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">K</span>
+                  <span className="text-white font-bold text-xl">𖦹</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-emerald-800">Kerala Journey</h1>
-                  <p className="text-xs text-gray-600">God's Own Country</p>
+                  <h1 className="text-2xl font-bold text-emerald-800">TropiKerala</h1>
+                  <p className="text-xs text-gray-600">Tropical. Tranquil. Timeless.</p>
                 </div>
               </motion.div>
             </Link>
