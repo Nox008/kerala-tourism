@@ -16,7 +16,7 @@ This was a creative/vibe-driven build, mostly prototyped and polished with the h
 - 🖼️ Hero sections with immersive imagery
 - 📍 Interactive UI for destinations, events, and experiences
 - 📱 Fully responsive layout (mobile-first)
-- 🌙 Light/Dark mode (if implemented)
+- 🌙 Light/Dark mode
 - 🔍 Explore by region or interest
 - ✨ Animations and transitions for a modern feel
 
