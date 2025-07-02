@@ -201,7 +201,7 @@ export default function HomePage() {
               {
                 title: "Munnar Hills",
                 description: "Rolling tea plantations and cool mountain air",
-                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1637066742971-726bee8d9f56?q=80&w=1249&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 rating: 4.8
               },
               {
@@ -213,7 +213,7 @@ export default function HomePage() {
               {
                 title: "Kochi Heritage",
                 description: "Colonial architecture and vibrant port city culture",
-                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1605955794720-651b9ae7f5e7?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 rating: 4.7
               }
             ].map((destination, index) => (

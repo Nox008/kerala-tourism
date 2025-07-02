@@ -137,7 +137,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
       {/* Hero Section */}
-      <section className="relative h-64 md:h-96 flex items-center justify-center overflow-hidden">
+      <section className="relative h-96 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-800/90 via-green-700/80 to-teal-800/90 z-10"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -152,24 +152,24 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Get In <span className="text-yellow-300">Touch</span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-emerald-100">
+          <p className="text-xl md:text-2xl text-emerald-100">
             Let's plan your perfect Kerala adventure together
           </p>
         </motion.div>
       </section>
 
       {/* Quick Actions */}
-      <section className="py-12 md:py-16 px-4">
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16"
+            className="grid md:grid-cols-3 gap-6 mb-16"
           >
             {quickActions.map((action, index) => {
               const IconComponent = action.icon;
@@ -178,17 +178,17 @@ export default function ContactPage() {
                   key={index}
                   variants={fadeInUp}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
                 >
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2">{action.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600 mb-4">{action.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{action.title}</h3>
+                  <p className="text-gray-600 mb-4">{action.description}</p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-4 py-2 md:px-6 md:py-2 rounded-full text-sm md:text-base font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300"
+                    className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2 rounded-full font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300"
                   >
                     {action.action}
                   </motion.button>
@@ -200,33 +200,33 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-12 md:py-16 px-4">
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg"
+              className="bg-white rounded-2xl p-8 shadow-lg h-fit"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
               
               {/* Success Message */}
               {isSubmitted && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center gap-2 text-sm md:text-base"
+                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center gap-2"
                 >
                   <CheckCircle className="w-5 h-5" />
                   <span>Thank you! We'll get back to you within 24 hours.</span>
                 </motion.div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                       Full Name *
@@ -238,7 +238,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
@@ -253,13 +253,13 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                       Phone Number
@@ -270,7 +270,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -283,7 +283,7 @@ export default function ContactPage() {
                       name="groupSize"
                       value={formData.groupSize}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                     >
                       <option value="">Select group size</option>
                       <option value="1-2">1-2 people</option>
@@ -294,7 +294,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="travelDates" className="block text-sm font-semibold text-gray-700 mb-2">
                       Preferred Travel Dates
@@ -305,7 +305,7 @@ export default function ContactPage() {
                       name="travelDates"
                       value={formData.travelDates}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                     />
                   </div>
                   <div>
@@ -317,7 +317,7 @@ export default function ContactPage() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-sm md:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"
                     >
                       <option value="">Select a subject</option>
                       <option value="booking">New Booking</option>
@@ -339,8 +339,8 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={4}
-                    className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 resize-none text-sm md:text-base"
+                    rows={5}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 resize-none"
                     placeholder="Tell us about your dream Kerala trip..."
                   ></textarea>
                 </div>
@@ -350,14 +350,11 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-3 px-6 rounded-lg font-semibold text-base md:text-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                       Sending...
                     </>
                   ) : (
@@ -374,52 +371,47 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6 md:space-y-8"
+              className="space-y-8"
             >
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
-                <div className="space-y-4 md:space-y-6">
-                  {contactInfo.map((info, index) => {
-                    const IconComponent = info.icon;
-                    return (
-                      <div key={index} className="flex items-start gap-3 md:gap-4">
-                        <div className="bg-emerald-100 p-2 md:p-3 rounded-full flex-shrink-0">
-                          <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-emerald-700" />
-                        </div>
-                        <div>
-                          <h3 className="text-base md:text-lg font-semibold text-gray-800">{info.title}</h3>
-                          <div className="text-sm md:text-base text-gray-600 space-y-1 mt-1">
-                            {info.details.map((detail, i) => (
-                              <p key={i}>{detail}</p>
-                            ))}
-                          </div>
-                          <p className="text-xs md:text-sm text-gray-500 mt-1 md:mt-2">{info.description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                <p className="text-gray-600 mb-8">
+                  Get in touch with our travel experts. We're here to help you plan the perfect Kerala experience.
+                </p>
               </div>
 
-              {/* Testimonials */}
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">What Our Clients Say</h2>
-                <div className="space-y-4 md:space-y-6">
-                  {testimonials.map((testimonial, index) => (
-                    <div key={index} className="border-l-4 border-emerald-500 pl-4 py-2">
-                      <div className="flex items-center gap-1 mb-2">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        ))}
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => {
+                  const IconComponent = info.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={fadeInUp}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-800 mb-1">{info.title}</h3>
+                          <p className="text-sm text-gray-500 mb-2">{info.description}</p>
+                          {info.details.map((detail, idx) => (
+                            <p key={idx} className="text-gray-700 font-medium">
+                              {detail}
+                            </p>
+                          ))}
+                        </div>
                       </div>
-                      <p className="text-sm md:text-base text-gray-700 italic mb-2">"{testimonial.comment}"</p>
-                      <p className="text-sm font-semibold text-gray-800">{testimonial.name}</p>
-                      <p className="text-xs text-gray-500">{testimonial.location}</p>
-                    </div>
-                  ))}
-                </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
@@ -427,24 +419,174 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 md:py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl"
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Find Our Office
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Located in the heart of Kochi at Marine Drive, our office is easily accessible and our team is ready to assist you with your Kerala travel plans.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl overflow-hidden shadow-xl"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.140656437566!2d76.26781331528737!3d9.9318768763586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873e6c6357e9d%3A0x9a4e8f1e1eb4bc6c!2sMarine%20Drive%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1623947834567!5m2!1sen!2sin"
               width="100%"
-              height="350"
+              height="450"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              className="rounded-xl md:rounded-2xl"
+              className="w-full"
             ></iframe>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              What Our Travelers Say
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Don't just take our word for it. Here's what our satisfied customers have to say about their Kerala experience.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-white rounded-xl p-6 shadow-lg"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
+                <div>
+                  <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{testimonial.location}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Frequently Asked Questions
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="space-y-4"
+          >
+            {[
+              {
+                question: "How far in advance should I book my Kerala trip?",
+                answer: "We recommend booking at least 2-3 months in advance, especially during peak season (October to March). This ensures better availability and rates."
+              },
+              {
+                question: "Do you provide customized tour packages?",
+                answer: "Absolutely! We specialize in creating personalized itineraries based on your interests, budget, and travel dates. Contact us to discuss your preferences."
+              },
+              {
+                question: "What is the best time to visit Kerala?",
+                answer: "October to March is ideal with pleasant weather. Monsoon season (June-September) offers lush green landscapes but heavy rainfall."
+              },
+              {
+                question: "Do you assist with visa and travel documentation?",
+                answer: "Yes, we provide complete assistance with visa applications, travel insurance, and other necessary documentation for international travelers."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 shadow-lg"
+              >
+                <h3 className="font-bold text-gray-800 mb-2">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 px-4 bg-gradient-to-r from-emerald-600 to-teal-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Start Your Kerala Adventure?
+            </h2>
+            <p className="text-xl text-emerald-100 mb-8">
+              Our travel experts are standing by to help you create memories that will last a lifetime
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-emerald-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg"
+              >
+                Call Now: +91 484 123 4567
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-emerald-600 transition-all duration-300"
+              >
+                Request Callback
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </section>
