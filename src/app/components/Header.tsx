@@ -116,10 +116,10 @@ const Header = () => {
                     <a href="/login" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       Login
                     </a>
-                    <a href="/signup" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
+                    {/* <a href="/signup" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       Sign Up
-                    </a>
-                    <div className="border-t border-gray-100 my-1"></div>
+                    </a> */}
+                    {/* <div className="border-t border-gray-100 my-1"></div> */}
                     <a href="/profile" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       My Profile
                     </a>
