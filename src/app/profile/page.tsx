@@ -27,21 +27,21 @@ export default function UserProfile() {
       destination: 'Munnar Tea Gardens',
       date: '15-18 Oct 2023',
       status: 'Confirmed',
-      image: '/munnar-tea-gardens.jpg'
+      image: 'https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
       id: 2,
-      destination: 'Alleppey Houseboat',
+      destination: 'Aleppey Backwaters',
       date: '22-24 Nov 2023',
       status: 'Completed',
-      image: '/alleppey-houseboat.jpg'
+      image: 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
       id: 3,
       destination: 'Wayanad Wildlife Safari',
       date: '5-7 Jan 2024',
       status: 'Upcoming',
-      image: '/wayanad-wildlife.jpg'
+      image: 'https://images.unsplash.com/photo-1698382439843-ca033a6079c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ];
 

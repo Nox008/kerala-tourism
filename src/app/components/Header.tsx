@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, User, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,7 +70,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <a href="/" className="flex items-center space-x-3 group">
+            <Link href="/" className="flex items-center space-x-3 group">
               <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">𖦹</span>
               </div>
@@ -81,19 +82,19 @@ const Header = () => {
                   Tropical. Tranquil. Timeless.
                 </p>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   className="relative px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 rounded-lg hover:bg-emerald-50 group"
                 >
                   {item.label}
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -113,29 +114,25 @@ const Header = () => {
                 {/* User Dropdown */}
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-10">
-                    <a href="/login" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
+                    <Link href="/login" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       Login
-                    </a>
-                    {/* <a href="/signup" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
-                      Sign Up
-                    </a> */}
-                    {/* <div className="border-t border-gray-100 my-1"></div> */}
-                    <a href="/profile" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
+                    </Link>
+                    <Link href="/profile" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       My Profile
-                    </a>
-                    <a href="/bookings" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
+                    </Link>
+                    <Link href="/bookings" className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">
                       My Bookings
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
 
               {/* Book Now Button */}
-              <a href="/contact">
+              <Link href="/contact">
                 <button className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 active:scale-95">
                   Book Now
                 </button>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -157,7 +154,7 @@ const Header = () => {
           <div className="bg-white border-t border-gray-100">
             <nav className="px-4 py-4 space-y-1">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   className={`block py-3 px-4 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-300 transform ${
@@ -167,11 +164,11 @@ const Header = () => {
                   onClick={closeMenus}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               
               <div className="pt-4 space-y-2">
-                <a
+                <Link
                   href="/login"
                   className={`block py-3 px-4 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-300 font-medium transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
@@ -180,8 +177,8 @@ const Header = () => {
                   onClick={closeMenus}
                 >
                   Login / Sign Up
-                </a>
-                <a href="/contact" onClick={closeMenus}>
+                </Link>
+                <Link href="/contact" onClick={closeMenus}>
                   <button
                     className={`w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95 transform ${
                       isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
@@ -190,7 +187,7 @@ const Header = () => {
                   >
                     Book Now
                   </button>
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
