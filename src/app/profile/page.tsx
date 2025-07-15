@@ -85,12 +85,12 @@ export default function UserProfile() {
           <div className="relative h-48 bg-gradient-to-r from-emerald-600 to-teal-600">
             <div className="absolute -bottom-16 left-6">
               <div className="relative h-32 w-32 rounded-full border-4 border-white bg-gray-100 overflow-hidden">
-                <Image 
-                  src="/profile-placeholder.jpg" 
+                <img
+                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Profile picture"
                   width={128}
                   height={128}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
                 {isEditing && (
                   <motion.button
@@ -297,10 +297,9 @@ export default function UserProfile() {
                         >
                           <div className="flex flex-col md:flex-row">
                             <div className="md:w-1/3 h-48 bg-gray-100 relative">
-                              <Image
+                              <img
                                 src={booking.image}
                                 alt={booking.destination}
-                                fill
                                 className="object-cover"
                               />
                             </div>
