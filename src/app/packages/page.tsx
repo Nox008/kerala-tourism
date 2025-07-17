@@ -289,6 +289,7 @@ export default function PackagesPage() {
                     >
                       Book Now
                     </motion.button>
+                    <Link href={`/packages/${pkg.id}`} passHref>
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -296,6 +297,7 @@ export default function PackagesPage() {
                     >
                       View Details
                     </motion.button>
+                  </Link>
                   </div>
                 </div>
               </motion.div>
