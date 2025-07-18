@@ -200,18 +200,21 @@ export default function HomePage() {
             {[
               {
                 title: "Munnar Hills",
+                id:"munnar",
                 description: "Rolling tea plantations and cool mountain air",
                 image: "https://images.unsplash.com/photo-1637066742971-726bee8d9f56?q=80&w=1249&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 rating: 4.8
               },
               {
                 title: "Alleppey Backwaters",
+                id:"alleppey",
                 description: "Tranquil waterways and traditional houseboats",
                 image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
                 rating: 4.9
               },
               {
                 title: "Kochi Heritage",
+                id:"kochi",
                 description: "Colonial architecture and vibrant port city culture",
                 image: "https://images.unsplash.com/photo-1605955794720-651b9ae7f5e7?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 rating: 4.7
@@ -236,7 +239,7 @@ export default function HomePage() {
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-emerald-800 mb-2">{destination.title}</h3>
                   <p className="text-gray-600 mb-4">{destination.description}</p>
-                  <Link href={`/destinations/${destination.title.toLowerCase().replace(' ', '-')}`}>
+                  <Link href={`/destinations/${destination.id}`}>
                     <motion.button
                       whileHover={{ x: 5 }}
                       className="text-emerald-600 font-semibold hover:text-emerald-800 transition-colors duration-300"
