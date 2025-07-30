@@ -18,12 +18,13 @@ const buttonHover = {
 function BookingForm() {
   const searchParams = useSearchParams();
   const destination = searchParams.get('destination') || '';
+  const travelDate = searchParams.get('travelDate') || '';
 
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
-    travelDate: '',
+    travelDate: travelDate,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

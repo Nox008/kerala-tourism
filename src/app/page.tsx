@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { ChevronDown, MapPin, Calendar, Users, Star } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react'; // Import useState
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -20,6 +22,28 @@ const staggerContainer = {
 };
 
 export default function HomePage() {
+    // 1. Add state for form fields and router
+    const router = useRouter();
+    const [destination, setDestination] = useState('');
+    const [checkInDate, setCheckInDate] = useState('');
+    
+      // 2. Create the search handler function
+    const handleSearch = () => {
+    if (!destination) {
+    alert('Please select a destination to continue.');
+    return;
+    }
+    
+        // Use URLSearchParams for robust query string creation
+    const params = new URLSearchParams();
+    params.set('destination', destination);
+    if (checkInDate) {
+          // The booking page expects the param name 'travelDate'
+     params.set('travelDate', checkInDate);
+    }
+    
+    router.push(`/book?${params.toString()}`);
+    };
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
       {/* Hero Section */}
@@ -118,12 +142,17 @@ export default function HomePage() {
                 <label className="block text-sm font-semibold text-gray-700">Destination</label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3 w-5 h-5 text-emerald-600" />
-                  <select className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
-                    <option>Select Destination</option>
-                    <option>Munnar</option>
-                    <option>Alleppey</option>
-                    <option>Kochi</option>
-                    <option>Thekkady</option>
+                  {/* 3. Bind the destination select to state */}
+                  <select
+                   value={destination}
+                   onChange={(e) => setDestination(e.target.value)}
+                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                   >
+                    <option value="">Select Destination</option>
+                    <option value="Munnar">Munnar</option>
+                    <option value="Alleppey">Alleppey</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Thekkady">Thekkady</option>
                   </select>
                 </div>
               </motion.div>
@@ -134,9 +163,11 @@ export default function HomePage() {
                   <Calendar className="absolute left-3 top-3 w-5 h-5 text-emerald-600" />
                   <input
                     type="date"
+                    value={checkInDate}
+                    onChange={(e) => setCheckInDate(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                   />
-                </div>
+               </div>
               </motion.div>
               
               <motion.div variants={fadeInUp} className="space-y-2">
@@ -153,13 +184,15 @@ export default function HomePage() {
               </motion.div>
               
               <motion.div variants={fadeInUp} className="flex items-end">
-                <motion.button
+                {/* 5. Add the onClick handler to the search button */}
+                 <motion.button
+                  onClick={handleSearch}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                >
+                  >
                   Search
-                </motion.button>
+               </motion.button>
               </motion.div>
             </div>
           </motion.div>
